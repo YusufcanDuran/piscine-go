@@ -1,0 +1,1 @@
+ls -Ap | grep -vE '/$|^\.|^(\.\.)$' | xargs -I {} stat -c "%Y,%n" {} | sort -n | cut -d',' -f2 | sed 's/\/$//' | tr '\n' ',' | sed 's/,$//'
